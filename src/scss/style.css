@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  overflow: hidden;
+  background-color: #fc8871;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5em;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 10px;
+  background-color: #00afd4;
+  border: 5px solid #00889e;
+}
+
+.screen {
+  width: 100%;
+  min-height: 55px;
+  margin-bottom: 10px;
+  padding: 0.1em 0.3em;
+  background-color: #f1f2d9;
+  border-radius: 5px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen .formula {
+  height: 50%;
+}
+
+.screen #display {
+  height: 50%;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px 5px;
+  grid-template-areas: "AC AC . ." ". . . ." ". . . ." ". . . iquals" "zero zero . iquals";
+}
+
+#clear {
+  grid-area: AC;
+}
+
+#equals {
+  grid-area: iquals;
+  height: 100%;
+}
+
+#zero {
+  width: 100%;
+  grid-area: zero;
+}
+
+.key {
+  height: 50px;
+}
+
+.key .button {
+  height: 100%;
+  width: 100%;
+  font-size: 1.3em;
+  outline-style: none;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 3px 3px #00889e;
+  cursor: pointer;
+}
+
+.key .button:active {
+  opacity: 0.9;
+  transform: translateY(3px);
+}
+
+.key .number {
+  background-color: #8398ab;
+}
+
+.key .operation {
+  background-color: #f83d1e;
+}
+
+.key .equals {
+  background-color: #425b7e;
+}
+/*# sourceMappingURL=style.css.map */

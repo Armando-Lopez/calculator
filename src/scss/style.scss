@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$body-bg: #fc8871;
+$caculator-bg: #00afd4;
+$caculator-border: #00889e;
+$display-bg: #f1f2d9;
+$operations-bg: #f83d1e;
+$numbers-bg: #8398ab;
+$equals-bg: #425b7e;
+
+html {
+    font-size: 18px;
+}
+body {
+    overflow: hidden;
+    background-color: $body-bg;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 300px;
+
+    padding: 0.5em;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+
+    background-color: $caculator-bg;
+    border: 5px solid $caculator-border;
+}
+
+.screen {
+    width: 100%;
+    min-height: 55px;
+    margin-bottom: 10px;
+    padding: 0.1em 0.3em;
+    background-color: $display-bg;
+    border-radius: 5px;
+    border: 3px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    .formula {
+        height: 50%;
+    }
+
+    #display {
+        height: 50%;
+    }
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px 5px;
+    grid-template-areas:
+        "AC AC . ."
+        ". . . ."
+        ". . . ."
+        ". . . iquals"
+        "zero zero . iquals";
+}
+
+#clear {
+    grid-area: AC;
+}
+#equals {
+    grid-area: iquals;
+    height: 100%;
+}
+
+#zero {
+    width: 100%;
+    grid-area: zero;
+}
+
+.key {
+    height: 50px;
+
+    .button {
+        height: 100%;
+        width: 100%;
+        font-size: 1.3em;
+        outline-style: none;
+
+        border: none;
+        border-radius: 7px;
+        box-shadow: 3px 3px $caculator-border;
+        cursor: pointer;
+
+        &:active {
+            opacity: 0.9;
+            transform: translateY(3px);
+        }
+    }
+
+    .number {
+        background-color: $numbers-bg;
+    }
+    .operation {
+        background-color: $operations-bg;
+    }
+    .equals {
+        background-color: $equals-bg;
+    }
+}
